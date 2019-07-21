@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <mata charset = 'utf-8'/>
+        <title>Form</title>
+    </head>
+    <body>
+      <script type="text/javascript">
+
+
+        var surname  = [];
+        var names   = [];
+        var age = [];
+        var email = [];
+        var password = [];
+        var confirm_password = [];
+
+        var passwordInput  = document.getElementById("the_password");
+        var nameInput   = document.getElementById("name");
+        var confirm_passwordInput = document.getElementById("the_confirm_password");
+        var surnameInput = document.getElementById('surname');
+        var emailInput = document.getElementById('email');
+        var ageinput = document.getElementById('age');
+
+
+        function insert ( ) {
+          if(passwordInput.value === confirm_passwordInput.value){
+            surname.push( surnameInput.value );
+            names.push( nameInput.value );
+            password.push( passwordInput.value );
+            confirm_password.push(confirm_passwordInput.value );
+            age.push(ageinput.value );
+            email.push(emailInput.value );
+            alert("success");
+            return true;
+          }else{
+            alert("try again something went wrong");
+            return true;
+          };
+
+        }
+
+
+      </script>
+        <form>
+            <label for = 'name'>Name:</label>
+            <input type= 'text' name = 'name' id='name'/>
+            <br/>
+            <br/>
+            <label for = 'surname'>Surname:</label>
+            <input type = 'text' name = 'surname' id='surname'/>
+            <br/>
+            <br/>
+            <label for = 'age'>Age:</label>
+            <input type = 'text' name = 'age' id='age'/>
+            <br/>
+            <br/>
+            <label for = 'email'>Email:</label>
+            <input type = 'text' name = 'email' id='email'/>
+            <br/>
+            <br/>
+            <label for = 'password'>Password:</label>
+            <input type = 'text' name = 'passsword' id = 'the_password'/>
+            <br/>
+            <br/>
+            <label for = 'confirm password'>Confirm password:</label>
+            <input type = 'text' name ='confirm_password'id = 'the_confirm_password'/>
+            <br/>
+            <br/>
+            <input type = 'button' value = 'save' name = 'submit' id = 'submit' onclick="insert ( );"/>
+        </form>
+        <div id='values'></div>
+
+    </body>
+</html>
